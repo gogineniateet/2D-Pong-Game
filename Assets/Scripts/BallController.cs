@@ -16,14 +16,14 @@ public class BallController : MonoBehaviour
         transform.position = startPosition;
         LaunchBall();
     }
-
+    // reseting the ball position and launching the ball
     public void RestartPosition()
     {
         ball.velocity = Vector3.zero;
         transform.position = startPosition;
         LaunchBall();
     }
-
+    // launcing ball 
     private void LaunchBall()
     {
         float x = Random.Range(-1, 2);
@@ -35,7 +35,7 @@ public class BallController : MonoBehaviour
 
         ball.velocity = new Vector2(ballSpeed * x, ballSpeed * y);
     }
-
+    // updating score when collided with left and right wall
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "LeftGoal")

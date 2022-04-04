@@ -17,16 +17,16 @@ public class PlayerController : MonoBehaviour
         startPosition = transform.position;
     }
 
-    // Update is called once per frame
+    // left and right player movement
     void Update()
     {
         if (isPlayer1)
         {
-            movement = Input.GetAxis("Vertical");
+            movement = Input.GetAxis("Vertical1");
         }
         else
         {
-            movement = Input.GetAxis("Vertical1");
+            movement = Input.GetAxis("Vertical");
         }
         rb.velocity = new Vector2(rb.velocity.x, movement * playerSpeed);
     }
